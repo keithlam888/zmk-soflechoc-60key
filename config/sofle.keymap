@@ -58,8 +58,8 @@
     keymap {
         compatible = "zmk,keymap";
 
-        default_layer {
-            display-name = "default";
+        Default {
+            display-name = "Default";
 
             // ------------------------------------------------------------------------------------------------------------
             // |   `   |  1  |  2  |  3   |  4   |  5   |                   |  6   |  7    |  8    |  9   |   0   |       |
@@ -79,8 +79,8 @@
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
         };
 
-        lower_layer {
-            display-name = "lower";
+        Layer1 {
+            display-name = "Layer1";
 
             // TODO: Some binds are waiting for shifted keycode support.
             // ------------------------------------------------------------------------------------------------------------
@@ -91,11 +91,11 @@
             //               |     |      |      |      |        |  |       |      |       |       |      |
 
             bindings = <
-&kp ESC  &trans  &trans  &trans  &trans  &trans                           &trans  &trans        &kp SLASH     &kp ASTERISK  &kp MINUS  &trans
-&trans   &trans  &trans  &trans  &trans  &trans                           &trans  &kp N7        &kp N8        &kp N9        &kp PLUS   &kp BACKSLASH
-&trans   &trans  &trans  &trans  &trans  &trans                           &trans  &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp PLUS   &kp PIPE
-&trans   &trans  &trans  &trans  &trans  &trans  &trans       &trans      &trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp MINUS  &kp EQUAL
-                 &trans  &trans  &trans  &trans  &kp SPACE    &kp RETURN  &trans  &kp N0        &trans        &kp PERIOD
+&tog 0  &trans  &trans  &trans  &trans  &trans                           &trans  &trans        &kp SLASH     &kp ASTERISK  &kp MINUS  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                           &trans  &kp N7        &kp N8        &kp N9        &kp PLUS   &kp BACKSLASH
+&trans  &trans  &trans  &trans  &trans  &trans                           &trans  &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp PLUS   &kp PIPE
+&trans  &trans  &trans  &trans  &trans  &trans  &trans       &trans      &trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp MINUS  &kp EQUAL
+                &trans  &trans  &trans  &trans  &kp SPACE    &kp RETURN  &trans  &kp N0        &trans        &kp PERIOD
             >;
 
             sensor-bindings =
@@ -103,8 +103,8 @@
                 <&inc_dec_kp UP_ARROW DOWN_ARROW>;
         };
 
-        raise_layer {
-            display-name = "raise";
+        Layer2 {
+            display-name = "Layer2";
 
             // ------------------------------------------------------------------------------------------------------------
             // | BTCLR | BT1  | BT2  |  BT3  |  BT4  |  BT5 |                |      |      |       |      |       |       |
@@ -114,17 +114,17 @@
             //                |      |       |       |      |      |  |      |      |      |       |      |
 
             bindings = <
-&kp ESC  &kp F1  &kp F2          &kp F3          &kp F4           &kp F5                           &kp F6  &kp F7  &kp F8  &kp F9  &kp F10  &kp F11
-&trans   &trans  &trans          &kp UP_ARROW    &trans           &kp PAGE_UP                      &trans  &trans  &trans  &trans  &trans   &kp F12
-&trans   &trans  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp PAGE_DOWN                    &trans  &trans  &trans  &trans  &trans   &trans
-&trans   &trans  &trans          &trans          &trans           &trans         &trans    &trans  &trans  &trans  &trans  &trans  &trans   &trans
-                 &trans          &trans          &trans           &trans         &trans    &trans  &trans  &trans  &trans  &trans
+&tog 0  &kp F1  &kp F2          &kp F3          &kp F4           &kp F5                           &kp F6  &kp F7  &kp F8  &kp F9  &kp F10  &kp F11
+&trans  &trans  &trans          &kp UP_ARROW    &trans           &kp PAGE_UP                      &trans  &trans  &trans  &trans  &trans   &kp F12
+&trans  &trans  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp PAGE_DOWN                    &trans  &trans  &trans  &trans  &trans   &trans
+&trans  &trans  &trans          &trans          &trans           &trans         &trans    &trans  &trans  &trans  &trans  &trans  &trans   &trans
+                &trans          &trans          &trans           &trans         &trans    &trans  &trans  &trans  &trans  &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
         };
 
-        adjust_layer {
+        Layer3 {
             // ----------------------------------------------------------------------------------------------------------------------------
             // | BTCLR  |  BT1    |  BT2    |   BT3   |   BT4   |   BT5   |                  |      |      |       |      |       |       |
             // | EXTPWR | RGB_HUD | RGB_HUI | RGB_SAD | RGB_SAI | RGB_EFF |                  |      |      |       |      |       |       |
@@ -132,9 +132,9 @@
             // |        |         |         |         |         |         | RGB_TOG | |      |      |      |       |      |       |       |
             //                    |         |         |         |         |         | |      |      |      |       |      |
 
-            display-name = "adjust";
+            display-name = "Layer3";
             bindings = <
-&bt BT_CLR_ALL     &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                    &none  &none  &none  &none  &none  &none
+&bt BT_CLR_ALL     &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                    &none  &none  &none  &none  &none  &tog 0
 &ext_power EP_TOG  &none         &none         &none         &none         &studio_unlock                  &none  &none  &none  &none  &none  &none
 &none              &none         &none         &none         &none         &none                           &none  &none  &none  &none  &none  &none
 &none              &none         &none         &none         &none         &caps_word      &none    &none  &none  &none  &none  &none  &none  &none
@@ -144,7 +144,7 @@
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
         };
 
-        extra_layer {
+        Layer4 {
             // ----------------------------------------------------------------------------------------------------------------------------
             // | BTCLR  |  BT1    |  BT2    |   BT3   |   BT4   |   BT5   |                  |      |      |       |      |       |       |
             // | EXTPWR | RGB_HUD | RGB_HUI | RGB_SAD | RGB_SAI | RGB_EFF |                  |      |      |       |      |       |       |
@@ -152,9 +152,9 @@
             // |        |         |         |         |         |         | RGB_TOG | |      |      |      |       |      |       |       |
             //                    |         |         |         |         |         | |      |      |      |       |      |
 
-            display-name = "extra1";
+            display-name = "Layer4";
             bindings = <
-&none  &none  &none  &none  &none  &none                           &none  &none  &none  &none  &none  &none
+&none  &none  &none  &none  &none  &none                           &none  &none  &none  &none  &none  &tog 0
 &none  &none  &none  &none  &none  &studio_unlock                  &none  &none  &none  &none  &none  &none
 &none  &none  &none  &none  &none  &none                           &none  &none  &none  &none  &none  &none
 &none  &none  &none  &none  &none  &caps_word      &none    &none  &none  &none  &none  &none  &none  &none
