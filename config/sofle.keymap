@@ -114,8 +114,8 @@
             //                |      |       |       |      |      |  |      |      |      |       |      |
 
             bindings = <
-&tog 0          &kp F1  &kp F2          &kp F3          &kp F4           &kp F5                           &kp F6        &kp F7        &kp F8        &kp F9             &kp F10  &kp DELETE
-&kp TAB         &trans  &trans          &kp UP_ARROW    &trans           &kp PAGE_UP                      &kp C_VOL_UP  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2       &kp F11  &trans
+&tog 0          &kp F1  &kp F2          &kp F3          &kp F4           &kp F5                           &kp F6        &kp F7        &kp F8        &kp F9             &kp F10  &kp BACKSPACE
+&kp TAB         &trans  &trans          &kp UP_ARROW    &trans           &kp PAGE_UP                      &kp C_VOL_UP  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2       &kp F11  &kp DELETE
 &kp CAPS        &trans  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp PAGE_DOWN                    &kp C_VOL_DN  &bt BT_SEL 3  &bt BT_SEL 4  &bt BT_CLR_ALL     &kp F12  &trans
 &kp LEFT_SHIFT  &trans  &trans          &trans          &trans           &trans         &trans    &trans  &trans        &trans        &trans        &ext_power EP_TOG  &trans   &kp RIGHT_SHIFT
                         &trans          &trans          &trans           &kp SPACE      &trans    &trans  &kp RETURN    &trans        &trans        &trans
